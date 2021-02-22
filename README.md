@@ -21,18 +21,18 @@ A one-click script that installs a remote desktop environment on a Linux server 
 * You need a domain name (can be a subdomain) which points to the IP address of your server.
 * Then, please run the following command as a sudo user in SSH.
 ```
-wget https://raw.githubusercontent.com/h4llm3n/OneClickDesktop/master/OneClickDesktop.sh && sudo bash OneClickDesktop.sh
+wget https://raw.githubusercontent.com/h4llm3n/ocd/master/OneClickDesktop.sh && sudo bash OneClickDesktop.sh
 ```
 * The script will guide you through the installation process.
 * If you encounter any errors, please check the `OneClickDesktop.log` file that's located within the same directory where you download this script.
-* Please consider reporting the error log at https://github.com/h4llm3n/OneClickDesktop/issues so that I can fix any underlying issues.
+* Please consider reporting the error log at https://github.com/h4llm3n/ocd/issues so that I can fix any underlying issues.
 * Copy/paste between client and server should have been enabled by default.  If you have any problems with copy/paste when using VNC method, please try to run the EnableCopyPaste.sh file on your Desktop.
 
 ## Plugins
 There is a few plugin scripts/addons available.
-* A very simple guide to install Chrome browser.  Check out https://github.com/h4llm3n/OneClickDesktop/blob/master/plugins/chrome/readme.md
-* One-click change Guacamole login password.  Check out https://github.com/h4llm3n/OneClickDesktop/blob/master/plugins/change-Guacamole-password.sh
-* Tutorial to install Baiduyun Net Disk client.  Check out https://github.com/h4llm3n/OneClickDesktop/blob/master/plugins/baiduyun.md
+* A very simple guide to install Chrome browser.  Check out https://github.com/h4llm3n/ocd/blob/master/plugins/chrome/readme.md
+* One-click change Guacamole login password.  Check out https://github.com/h4llm3n/ocd/blob/master/plugins/change-Guacamole-password.sh
+* Tutorial to install Baiduyun Net Disk client.  Check out https://github.com/h4llm3n/ocd/blob/master/plugins/baiduyun.md
 
 ## Frequently Asked Questions (FAQ)
 
@@ -76,7 +76,7 @@ There is a few plugin scripts/addons available.
 ### Post-Installation
 
 12. Q: Can I change my Guacamole username and password?
-* A: Yes, please check out the password-update script here. https://github.com/h4llm3n/OneClickDesktop/blob/master/plugins/change-Guacamole-password.sh
+* A: Yes, please check out the password-update script here. https://github.com/h4llm3n/ocd/blob/master/plugins/change-Guacamole-password.sh
 
 13. Q: My desktop is laggy; can I improve the user experience?
 * A: Yes, to some extent.  Firstly, if you are still using VNC, I'd recommend you reinstall your server and run the script again using the RDP mode; it makes your life easier.  Secondly, if you are using CentOS, switching to Ubuntu or Debian might help, because the desktop of CentOS is fancier and renders slower.  Thirdly, you can decrease the screen resolution by editting `/etc/guacamole/user-mapping.xml` file.  Of course, if you are able to use a server that's nearer to you physically, that will help a lot.
