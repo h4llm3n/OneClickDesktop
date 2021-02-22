@@ -227,14 +227,17 @@ function install_guacamole_ubuntu_debian
 	say @B"Setting up dependencies..." yellow
 	echo
 	apt-get update && apt-get upgrade -y
-	apt-get install wget curl sudo zip unzip tar perl expect build-essential libcairo2-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev libtelnet-dev libwebsockets-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev libavformat-dev tomcat9 tomcat9-admin tomcat9-common tomcat9-user japan* chinese* korean* fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core -y
+	apt-get install wget curl sudo zip unzip tar perl expect build-essential libcairo2-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev libtelnet-dev libwebsockets-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev libavformat-dev tomcat9 tomcat9-admin tomcat9-common tomcat9-user fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core -y
 	if [ "$OS" = "DEBIAN10" ] ; then
 		bash -c 'echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list.d/backports.list'
 		apt-get update && apt-get upgrade -y
 		apt-get install libjpeg62-turbo-dev -y
 		apt-get -t buster-backports install freerdp2-dev libpulse-dev -y
 	else
-		apt-get install libjpeg-turbo8-dev language-pack-ja language-pack-zh* language-pack-ko -y
+		add-apt-repository ppa:remmina-ppa-team/freerdp-daily
+		apt-get update
+		apt-get install freerdp2-dev freerdp2-x11
+		apt-get install libjpeg-turbo8-dev -y
 	fi
 	wget $GUACAMOLE_DOWNLOAD_LINK
 	tar zxf guacamole-server-${GUACAMOLE_VERSION}.tar.gz
